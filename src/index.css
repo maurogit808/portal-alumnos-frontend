@@ -1,0 +1,15 @@
+/* Efecto de brillo y escala para todos los botones del sistema */
+button {
+  transition: all 0.2s ease-in-out !important;
+}
+
+button:hover {
+  filter: brightness(1.15) saturate(1.1); /* Hace que brille más resaltando su propio color */
+  transform: translateY(-2px); /* Se levanta un poquito dando volumen */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al flotar */
+}
+
+button:active {
+  transform: translateY(1px); /* Efecto de presionado al hacer clic */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

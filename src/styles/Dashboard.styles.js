@@ -110,13 +110,13 @@ export const styles = {
     width: '100%',
     fontSize: '15px'
   },
- // El grid de los formularios
-  formGrid: { 
+ formGrid: { 
     display: 'grid', 
-    gridTemplateColumns: '1fr', // Forzamos a una sola columna en móviles
-    gap: '10px', // Menos espacio entre inputs
-    marginTop: '15px',
-    width: '100%'
+    gridTemplateColumns: '1fr', // Forzamos 1 sola columna SIEMPRE en móviles
+    gap: '12px', 
+    marginTop: '20px',
+    width: '100%',
+    boxSizing: 'border-box' // Importante para que el grid no se salga
   },
   inputGroup: { 
     display: 'flex', 

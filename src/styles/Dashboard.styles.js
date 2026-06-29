@@ -59,11 +59,14 @@ export const styles = {
     margin: '8px 0 0 0',
     letterSpacing: '-0.05em'
   },
+  // Tarjetas de secciones (el fondo blanco que contiene todo)
   sectionCard: { 
     backgroundColor: 'white', 
-    padding: '20px', // Ajustado
+    padding: '15px', // Reducido de 30px a 15px para ganar espacio
     borderRadius: '12px', 
-    boxShadow: '0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1)' 
+    boxShadow: '0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1)',
+    width: '100%',
+    boxSizing: 'border-box' // Asegura que el padding no desborde
   },
   sectionHeader: { 
     display: 'flex', 
@@ -88,11 +91,13 @@ export const styles = {
     backgroundColor: '#10b981', 
     color: 'white', 
     border: 'none', 
-    padding: '10px 18px', 
+    padding: '8px 12px', // Botón más compacto
     borderRadius: '6px', 
     cursor: 'pointer', 
     fontWeight: '600',
-    fontSize: '14px'
+    fontSize: '13px',
+    width: 'auto', // Deja que el texto decida el ancho
+    display: 'inline-flex'
   },
   saveBtn: { 
     backgroundColor: '#1e3a8a', 
@@ -105,11 +110,13 @@ export const styles = {
     width: '100%',
     fontSize: '15px'
   },
+ // El grid de los formularios
   formGrid: { 
     display: 'grid', 
-    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', // Ajustado
-    gap: '15px', 
-    marginTop: '20px' 
+    gridTemplateColumns: '1fr', // Forzamos a una sola columna en móviles
+    gap: '10px', // Menos espacio entre inputs
+    marginTop: '15px',
+    width: '100%'
   },
   inputGroup: { 
     display: 'flex', 

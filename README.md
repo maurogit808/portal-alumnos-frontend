@@ -1,16 +1,40 @@
-# React + Vite
+# Portal Alumnos - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interfaz de usuario para la gestión de alumnos, desarrollada con React y Vite.
 
-Currently, two official plugins are available:
+## Tecnologías Utilizadas
+* React
+* Vite
+* React Router
+* Axios (para consumo de API)
+* CSS (Diseño responsive)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Instalación y Ejecución
 
-## React Compiler
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [TU_URL_DEL_REPO_FRONTEND]
+   cd [NOMBRE_DE_TU_CARPETA]
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+   Instalar dependencias:
 
-## Expanding the ESLint configuration
+Bash
+npm install
+Configuración de entorno:
+Crea un archivo .env en la raíz del proyecto para definir la conexión con el Backend:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Code snippet
+VITE_API_URL=[https://portal-alumnos-backend.onrender.com](https://portal-alumnos-backend.onrender.com)
+Ejecutar en desarrollo:
+
+Bash
+npm run dev
+Despliegue
+URL de la App: [portal-alumnos-frontend.vercel.app]
+
+Notas Adicionales
+Este proyecto consume los servicios de la API desplegada en Render.
+
+La interfaz está diseñada de forma responsive para ser utilizada tanto en escritorio como en dispositivos móviles.
+
+Desarrollado para el curso de Programación Full Stack - UTN.

@@ -5,7 +5,7 @@ const TablaAlumnos = ({
   loading, 
   error, 
   onVerLegajo, 
-  onEditar, // ◄ Agregamos esta prop
+  onEditar, 
   onEliminar, 
   styles 
 }) => {
@@ -18,10 +18,9 @@ const TablaAlumnos = ({
       <table style={styles.table}>
         <thead>
           <tr style={styles.thRow}>
-            <th style={styles.th}>Nombre y Apellido</th>
+            <th style={styles.th}>Alumno</th>
             <th style={styles.th}>DNI</th>
-            <th style={styles.th}>Curso</th>
-            <th style={styles.th}>Acciones</th>
+            <th style={{...styles.th, width: '80px'}}>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -32,22 +31,24 @@ const TablaAlumnos = ({
               <tr key={targetId} style={styles.tr}>
                 <td style={styles.td}>{alumno.nombre} {alumno.apellido}</td>
                 <td style={styles.td}>{alumno.dni}</td>
-                <td style={styles.td}>{alumno.curso || 'N/C'}</td>
-                <td style={styles.td}>
-                  <div style={{ display: 'flex', gap: '8px' }}>
-                    <button onClick={() => onVerLegajo(alumno)} style={styles.actionBtn}>
-                      Ver Legajo
+                <td style={{...styles.td, width: '80px'}}>
+                  {/* Botones apilados verticalmente para evitar ensanchar la tabla */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <button 
+                      onClick={() => onVerLegajo(alumno)} 
+                      style={{...styles.actionBtn, padding: '4px 6px', fontSize: '10px'}}
+                    >
+                      Legajo
                     </button>
-                    {/* ◄ NUEVO BOTÓN DE EDITAR */}
                     <button 
                       onClick={() => onEditar(alumno)} 
-                      style={{...styles.actionBtn, backgroundColor: '#f59e0b'}}
+                      style={{...styles.actionBtn, backgroundColor: '#f59e0b', padding: '4px 6px', fontSize: '10px'}}
                     >
                       Editar
                     </button>
                     <button 
                       onClick={() => onEliminar(targetId, `${alumno.nombre} ${alumno.apellido}`)} 
-                      style={styles.deleteBtn}
+                      style={{...styles.deleteBtn, padding: '4px 6px', fontSize: '10px'}}
                     >
                       Eliminar
                     </button>

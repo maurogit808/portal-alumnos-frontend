@@ -148,12 +148,11 @@ export const styles = {
     display: 'block' // Asegura el comportamiento de bloque
   },
   
-  // Esto obliga a la tabla a no estirar el contenedor
   table: { 
     width: '100%', 
-    minWidth: '300px', // Mínimo para que se vea legible
-    borderCollapse: 'collapse',
-    tableLayout: 'auto' // Deja que el navegador ajuste las celdas
+    borderCollapse: 'collapse', 
+    tableLayout: 'fixed', // ESTO ES LA CLAVE
+    wordWrap: 'break-word' // Si el texto es largo, se corta en lugar de ensanchar
   },
   td: { 
     padding: '12px 10px', // Ajustado para ahorrar espacio

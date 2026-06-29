@@ -147,7 +147,6 @@ export const styles = {
     border: '1px solid #e2e8f0',
     display: 'block' // Asegura el comportamiento de bloque
   },
-  
   table: { 
     width: '100%', 
     borderCollapse: 'collapse', 

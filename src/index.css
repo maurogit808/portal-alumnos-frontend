@@ -1,4 +1,28 @@
-/* Efecto de brillo y escala (solo para pantallas mayores a 600px) */
+/* 1. Reset Global y contención de caja */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  -webkit-tap-highlight-color: transparent; /* Quita el recuadro azul al tocar botones en móvil */
+}
+
+/* 2. Bloqueo total de desborde en el documento */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden !important; /* Fuerza a ocultar cualquier contenido que exceda el ancho */
+  background-color: #f8fafc;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden !important;
+}
+
+/* 3. Efectos de botones (Solo escritorio) */
 @media (min-width: 600px) {
   button {
     transition: all 0.2s ease-in-out !important;
@@ -16,28 +40,13 @@
   }
 }
 
-/* Para pantallas chicas (celulares), dejamos los botones estáticos */
+/* 4. Estilos simplificados para móviles */
 @media (max-width: 599px) {
   button {
-    /* Quitamos el transform y el box-shadow extra para evitar que desborden */
     transition: filter 0.2s ease-in-out !important;
   }
   
   button:active {
-    filter: brightness(0.9); /* Solo un pequeño feedback al presionar */
+    filter: brightness(0.9);
   }
-}
-
-/* Bloquea el desborde horizontal en toda la app */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-/* Asegura que todos los elementos respeten los límites */
-* {
-  box-sizing: border-box !important;
-  max-width: 100% !important;
 }

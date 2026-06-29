@@ -27,3 +27,17 @@
     filter: brightness(0.9); /* Solo un pequeño feedback al presionar */
   }
 }
+
+/* Bloquea el desborde horizontal en toda la app */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Asegura que todos los elementos respeten los límites */
+* {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+}

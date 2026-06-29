@@ -138,20 +138,22 @@ export const styles = {
     width: '100%', 
     boxSizing: 'border-box' // CRUCIAL para responsive
   },
- tableResponsive: { 
-    width: '100%', 
-    overflowX: 'auto', // Esto permite el scroll SOLO dentro de la tabla
+ // Asegura que el contenedor de la tabla sea el límite absoluto
+  tableResponsive: { 
+    width: '100%',
+    maxWidth: '100%', // No permite que se pase del ancho del dispositivo
+    overflowX: 'auto', // Permite el scroll solo si es estrictamente necesario
     borderRadius: '8px',
     border: '1px solid #e2e8f0',
-    maxWidth: '100vw', // Asegura que no sea más ancho que la pantalla del dispositivo
-    boxSizing: 'border-box'
+    display: 'block' // Asegura el comportamiento de bloque
   },
- table: { 
+  
+  // Esto obliga a la tabla a no estirar el contenedor
+  table: { 
     width: '100%', 
-    minWidth: '500px', // IMPORTANTE: Dale un ancho mínimo para que el scroll tenga sentido
-    borderCollapse: 'collapse', 
-    textAlign: 'left',
-    tableLayout: 'fixed' // Esto evita que las celdas se estiren demasiado
+    minWidth: '300px', // Mínimo para que se vea legible
+    borderCollapse: 'collapse',
+    tableLayout: 'auto' // Deja que el navegador ajuste las celdas
   },
   td: { 
     padding: '12px 10px', // Ajustado para ahorrar espacio
